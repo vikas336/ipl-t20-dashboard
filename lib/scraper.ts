@@ -1,7 +1,8 @@
 import chromium from "chrome-aws-lambda";
 import puppeteer from "puppeteer-core";
+import type { Browser } from "puppeteer-core";
 
-async function getBrowser() {
+async function getBrowser(): Promise<Browser> {
   return await puppeteer.launch({
     args: chromium.args,
     defaultViewport: chromium.defaultViewport,
@@ -11,7 +12,7 @@ async function getBrowser() {
 }
 
 export async function fetchFixtures() {
-  let browser: any = null;
+  let browser: Browser | null = null;
   try {
     browser = await getBrowser();
     const page = await browser.newPage();
@@ -41,7 +42,7 @@ export async function fetchFixtures() {
 }
 
 export async function fetchPointsTable() {
-  let browser: any = null;
+  let browser: Browser | null = null;
   try {
     browser = await getBrowser();
     const page = await browser.newPage();
@@ -74,7 +75,7 @@ export async function fetchPointsTable() {
 }
 
 export async function fetchLiveOrUpcoming() {
-  let browser: any = null;
+  let browser: Browser | null = null;
   try {
     browser = await getBrowser();
     const page = await browser.newPage();
@@ -99,7 +100,7 @@ export async function fetchLiveOrUpcoming() {
 
     if (live) return live;
 
-    // fallback to next fixture
+    // fallback → first upcoming fixture
     const fixtures = await fetchFixtures();
     if (fixtures && fixtures.length) {
       return { status: "upcoming", ...fixtures[0] };
