@@ -1,0 +1,15 @@
+{
+  "liveOrUpcoming": {
+    "status": "upcoming",
+    "teams": { "home": "Mumbai Indians", "away": "Chennai Super Kings" },
+    "venue": "Wankhede Stadium",
+    "time": "7:30 PM IST",
+    "summary": "Match day 1"
+  },
+  "pointsTable": [
+    { "team": "Mumbai Indians", "played": "0", "wins": "0", "losses": "0", "points": "0", "nrr": "0.00" }
+  ],
+  "schedule": [
+    { "home": "Mumbai Indians", "away": "Chennai Super Kings", "date": "2025-03-22", "time": "7:30 PM", "venue": "Wankhede", "matchNo": "1" }
+  ]
+}
