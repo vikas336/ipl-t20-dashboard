@@ -1,12 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import cache from '../../lib/cache'
-import {
-  fetchFixtures,
-  fetchPointsTable,
-  fetchLiveOrUpcoming,
-  fetchMostRuns,
-  fetchMostWickets
-} from '../../lib/scraper'
+import { fetchFixtures, fetchPointsTable, fetchLiveOrUpcoming } from '../../lib/scraper'
 import dummy from '../../data/dummy.json'
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -14,25 +8,22 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const cached = cache.get('ipl_data')
     if (cached) return res.status(200).json(cached)
 
-    const [fixtures, pointsTable, liveOrUpcoming, mostRuns, mostWickets] = await Promise.all([
+    const [fixtures, pointsTable, liveOrUpcoming] = await Promise.all([
       fetchFixtures(),
       fetchPointsTable(),
-      fetchLiveOrUpcoming(),
-      fetchMostRuns(),
-      fetchMostWickets()
+      fetchLiveOrUpcoming()
     ])
 
     const payload = {
       liveOrUpcoming: liveOrUpcoming ?? dummy.liveOrUpcoming,
       pointsTable: pointsTable ?? dummy.pointsTable,
-      schedule: fixtures ?? dummy.schedule,
-      mostRuns: mostRuns ?? [],
-      mostWickets: mostWickets ?? []
+      schedule: fixtures ?? dummy.schedule
     }
 
     cache.set('ipl_data', payload, 60)
     res.status(200).json(payload)
-  } catch {
+  } catch (err) {
+    console.error("API scrape error", err)
     res.status(200).json(dummy)
   }
 }
