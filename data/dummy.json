@@ -1,15 +1,66 @@
 {
   "liveOrUpcoming": {
-    "status": "upcoming",
-    "teams": { "home": "Mumbai Indians", "away": "Chennai Super Kings" },
+    "status": "live",
+    "teams": {
+      "home": "Mumbai Indians",
+      "away": "Chennai Super Kings"
+    },
     "venue": "Wankhede Stadium",
     "time": "7:30 PM IST",
-    "summary": "Match day 1"
+    "summary": "MI 145/3 (15.2 ov) vs CSK"
   },
   "pointsTable": [
-    { "team": "Mumbai Indians", "played": "0", "wins": "0", "losses": "0", "points": "0", "nrr": "0.00" }
+    { "team": "Mumbai Indians", "played": "3", "wins": "2", "losses": "1", "points": "4", "nrr": "+0.785" },
+    { "team": "Chennai Super Kings", "played": "3", "wins": "2", "losses": "1", "points": "4", "nrr": "+0.624" },
+    { "team": "Royal Challengers Bangalore", "played": "3", "wins": "1", "losses": "2", "points": "2", "nrr": "-0.341" },
+    { "team": "Kolkata Knight Riders", "played": "2", "wins": "1", "losses": "1", "points": "2", "nrr": "-0.210" },
+    { "team": "Rajasthan Royals", "played": "2", "wins": "1", "losses": "1", "points": "2", "nrr": "+0.102" },
+    { "team": "Delhi Capitals", "played": "2", "wins": "0", "losses": "2", "points": "0", "nrr": "-0.452" },
+    { "team": "Punjab Kings", "played": "2", "wins": "0", "losses": "2", "points": "0", "nrr": "-0.598" },
+    { "team": "Sunrisers Hyderabad", "played": "2", "wins": "1", "losses": "1", "points": "2", "nrr": "+0.210" },
+    { "team": "Lucknow Super Giants", "played": "2", "wins": "1", "losses": "1", "points": "2", "nrr": "+0.167" },
+    { "team": "Gujarat Titans", "played": "2", "wins": "1", "losses": "1", "points": "2", "nrr": "-0.025" }
   ],
   "schedule": [
-    { "home": "Mumbai Indians", "away": "Chennai Super Kings", "date": "2025-03-22", "time": "7:30 PM", "venue": "Wankhede", "matchNo": "1" }
+    {
+      "matchNo": "1",
+      "home": "Mumbai Indians",
+      "away": "Chennai Super Kings",
+      "date": "2025-03-22",
+      "time": "7:30 PM",
+      "venue": "Wankhede Stadium"
+    },
+    {
+      "matchNo": "2",
+      "home": "Royal Challengers Bangalore",
+      "away": "Kolkata Knight Riders",
+      "date": "2025-03-23",
+      "time": "7:30 PM",
+      "venue": "M. Chinnaswamy Stadium"
+    },
+    {
+      "matchNo": "3",
+      "home": "Rajasthan Royals",
+      "away": "Delhi Capitals",
+      "date": "2025-03-24",
+      "time": "7:30 PM",
+      "venue": "Sawai Mansingh Stadium"
+    },
+    {
+      "matchNo": "4",
+      "home": "Punjab Kings",
+      "away": "Sunrisers Hyderabad",
+      "date": "2025-03-25",
+      "time": "7:30 PM",
+      "venue": "PCA Stadium, Mohali"
+    },
+    {
+      "matchNo": "5",
+      "home": "Lucknow Super Giants",
+      "away": "Gujarat Titans",
+      "date": "2025-03-26",
+      "time": "7:30 PM",
+      "venue": "Ekana Stadium, Lucknow"
+    }
   ]
 }
